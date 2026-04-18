@@ -1,0 +1,35 @@
+rho       = 1.3247179572447
+Q         = 1.2207440846058
+lambda_3  = 0.24512233375331
+lambda_4  = 0.18082748660384
+chi = Q/rho = 0.92151244567165
+rho*Q     = 1.6171416100775
+
+E_3 = 368f1:  conductor=368, rank=0, disc=-368
+E_4 = 1132b1: conductor=1132, rank=1, disc=-4528
+
+Omega_3 (real period E_3) = 2.19658305012201
+Omega_4 (real period E_4) = 2.71217511597933
+
+Omega_4 / 23       = 0.117920657216493
+alpha_s(M_Z) (PDG) = 0.117900000000000
+Error              = 0.0175%
+
+L(E_3, 1)  = 2.195421
+L'(E_4, 1) = 2.422541
+
+sin^2 theta_W candidates:
+  lam4 / chi^3            = 0.231079  err 0.0609%
+  L(E3,1) * L'(E4,1) / 23 = 0.231239  err 0.0083%
+
+gamma_BI candidates:
+  lam4 * rho      = 0.239545  err 0.0023%
+  Om3^2 / Om4^3   = 0.241848  err 0.9634%
+
+Q(rho): disc=-23, class#=1, regulator=0.281199574322962
+Q(Q):   disc=-283, class#=1, regulator=0.378199332459569
+Regulator(Q(rho)) / ln(rho) = 1.0000000000
+
+Compositum Q(rho, Q): degree=12, disc=-6342648595267
+N(rho * Q) in Q(rho, Q) = -1
+*** UNIT NORM IDENTITY N(rho*Q) = -1 CONFIRMED ***
