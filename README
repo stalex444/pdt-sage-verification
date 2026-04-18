@@ -1,0 +1,41 @@
+### Option 3 — Jupyter notebook with SageMath kernel
+
+Paste the contents of `pdt_verification.sage` into a cell and execute.
+
+### Option 4 — CoCalc or other hosted SageMath environment
+
+Upload the script or paste it into a notebook cell. CoCalc (https://cocalc.com) provides free SageMath access with no time limits.
+
+## Expected output
+
+See `expected_output.txt` for a reference run. A correct run should match every line up to rounding in the final digits. Specifically:
+
+- α_s = Ω₄/23 should match the PDG value to better than 0.02%.
+- sin²θ_W from L-functions should match to better than 0.01%.
+- γ_BI = λ₄·ρ should match to better than 0.003%.
+- Reg(Q(ρ)) / ln(ρ) should equal 1 to machine precision.
+- N(ρ · Q) should equal −1 exactly (it is an integer in the compositum, not an approximation).
+
+If any of these fail, something has changed in Sage's underlying implementations and the discrepancy is worth investigating.
+
+## What this script does not do
+
+This is a verification script, not a derivation script. It confirms that the numerical predictions of PDT agree with standard mathematical computations. It does not derive the formulas themselves — those derivations appear in the PDT papers listed below.
+
+This script also does not attempt to test every PDT prediction. It covers the foundational claims that establish the framework. Extended verifications of the full Lagrangian, the cosmological sector, and the Standard Model parameter table appear in separate repositories.
+
+## References
+
+- Alexander, S. (2026). "Arithmetic Geometry at the Pisot Boundary." Zenodo. https://doi.org/10.5281/zenodo.19561374
+- Alexander, S. (2026). "The Strong Coupling Constant as an Elliptic Period." Zenodo. https://doi.org/10.5281/zenodo.19634179
+- Alexander, S. (2026). "A Fibonacci-Lucas Spectral Law for the Trinomials xⁿ = x + 1." Zenodo. https://doi.org/10.5281/zenodo.18435677
+- Alexander, S. (2026). "PDT Proof Map." Zenodo. https://doi.org/10.5281/zenodo.19133097
+
+## License
+
+MIT License. See `LICENSE` file.
+
+## Contact
+
+Stephanie Alexander — stephanie@baryonix.com  
+Baryonix Corp. — https://baryonix.com
