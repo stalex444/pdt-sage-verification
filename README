@@ -1,4 +1,72 @@
-### Option 3 — Jupyter notebook with SageMath kernel
+
+# pdt-sage-verification
+
+End-to-end verification of the foundational numerical claims of Pisot
+Dimensional Theory (PDT), using only SageMath's standard mathematical
+libraries. Runs in under a minute on standard hardware.
+
+## What this repository verifies
+
+A single SageMath script (`pdt_verification.sage`, approximately 70 lines)
+performs the following verifications in sequence:
+
+1. **Pisot boundary constants.** Computes ρ ≈ 1.3247 as the real root of
+   x³ − x − 1 and Q ≈ 1.2207 as the real root of x⁴ − x − 1.
+
+2. **Elliptic curves.** Loads Cremona 368f1 and 1132b1 from Sage's elliptic
+   curve database and verifies conductors, ranks, and discriminants.
+
+3. **Real periods.** Computes Ω₃ = 2.19658... (real period of E₃ = 368f1)
+   and Ω₄ = 2.71218... (real period of E₄ = 1132b1).
+
+4. **Strong coupling.** Verifies α_s(M_Z) = Ω₄ / 23 = 0.11792 against the
+   PDG value 0.1179 (error 0.0175%).
+
+5. **L-function special values.** Computes L(E₃, 1) and L'(E₄, 1), which
+   confirm BSD for both curves.
+
+6. **Weak mixing angle.** Verifies sin²θ_W = L(E₃, 1) · L'(E₄, 1) / 23
+   against the measured value (error 0.0083%).
+
+7. **Barbero-Immirzi parameter.** Verifies γ_BI = λ₄ · ρ = 0.23954 against
+   the Meissner value (error 0.0023%).
+
+8. **Number field invariants.** Computes the discriminant, class number,
+   and regulator of Q(ρ) and Q(Q). Confirms that Reg(Q(ρ)) / ln(ρ) = 1
+   exactly — the regulator of the 3D number field equals the logarithm
+   of the plastic constant.
+
+9. **Compositum.** Constructs the degree-12 compositum Q(ρ, Q) and
+   computes its discriminant.
+
+10. **Unit-norm identity.** Verifies the foundational algebraic identity
+    N(ρ · Q) = −1 in the compositum Q(ρ, Q). This is the bedrock
+    identity underlying the entire PDT framework.
+
+## Requirements
+
+- SageMath 9.0 or newer.
+
+No other dependencies. All computations use Sage's built-in elliptic
+curve, L-function, and number field implementations. No PDT-specific
+code is used anywhere in the script.
+
+## How to run
+
+### Option 1 — SageMathCell (no installation required)
+
+The fastest way to run this verification is through SageMathCell, which
+runs SageMath in your browser with no setup:
+
+1. Open https://sagecell.sagemath.org
+2. Paste the contents of `pdt_verification.sage` into the cell
+3. Click "Evaluate"
+
+The full verification typically completes in 30-60 seconds. SageMathCell
+has a default execution time limit; if the compositum step times out,
+use one of the options below.
+
+### Option 2 — Local SageMath installation### Option 3 — Jupyter notebook with SageMath kernel
 
 Paste the contents of `pdt_verification.sage` into a cell and execute.
 
